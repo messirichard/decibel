@@ -1,0 +1,5 @@
+*.zip
+*.tar.gz
+*.tar.bz
+/index.php
+/config.php

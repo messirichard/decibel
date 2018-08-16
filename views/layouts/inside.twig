@@ -1,0 +1,25 @@
+{% extends 'layouts/main.twig' %}
+{% block maincontent %}
+<body>
+		<div class="wrapper prelatif">
+			<div class="outer-wrapp-contshm prelatife pg_inside">
+				<div class="clear height-25"></div>
+				{% include "/layouts/header.twig" with { 'menu': block('menu') } %}
+
+				<div class="clear height-50"></div><div class="height-35"></div>
+				<div class="prelatife container">
+					
+					{% block content %}{% endblock %}
+
+					<div class="clear"></div>
+				</div>
+
+				<div class="clear height-50"></div>
+
+			{# {% include "/layouts/header.twig" with { 'menu': block('menu') } %} #}
+				<div class="clear"></div>
+			</div>			
+			{% include "/layouts/footer.twig" %}
+		</div>
+</body>
+{% endblock %}

@@ -1,0 +1,86 @@
+<div class="outer-headers-tpl">
+	<div class="inh2-background">
+		<div class="prelatife container">
+			<div class="back-contact-tophl">
+				{# <div class="text"> #}
+				<div class="text text-center">
+					{# <img src="{{ app.request.baseurl }}/asset/images/t-top-hotline-dcbls.png" alt=""> #}
+					HOTLINE 081 2351 72261<br><span class="onlys">(SMS or Whats App only)</span>  {# &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#">CONTACT</a> #}
+				</div>
+			</div>
+
+			<div class="logo-web-decibles"> 
+				{# <div class="clear height-25"></div><div class="height-1"></div> #}
+				<div class="clear height-10"></div><div class="height-5"></div>
+				<a href="{{ url('homepage') }}">
+					<img src="{{ app.request.baseurl }}/asset/images/logo-web-decibles.png" alt="">
+				</a> 
+			</div>
+			<div class="clear height-15"></div><div class="height-4"></div> 
+			<div class="top-menu text-center hidden-xs">
+				<ul class="list-inline">
+					<li class="{% if menu == 'homepage' %}active{% endif %}"><a href="{{ path('homepage') }}">HOME</a></li>
+					<li class="{% if menu == 'about' %}active{% endif %}"><a href="{{ path('about') }}">ABOUT</a></li>
+					{# <li class="{% if menu == 'roadto' %}active{% endif %}"><a href="{{ path('roadto') }}">ROAD TO DECIBELS</a></li> #}
+					{# <li class="{% if menu == 'linesup' %}active{% endif %}"><a href="{{ path('lines_up') }}">LINE UPS</a></li> #}
+					{# onclick="javascript:return false;" #}
+					<li class="{% if menu == 'tickets' %}active{% endif %}"><a href="{{ path('tickets') }}">TICKETS</a></li>
+					<li class="{% if menu == 'ticket' %}active{% endif %}"><a href="{{ path('ticket') }}">UPCOMING EVENTS</a></li>
+					<li class="{% if menu == 'gallery' %}active{% endif %}"><a href="{{ path('gallery') }}">GALLERY</a></li>
+					{# <li class="{% if menu == 'accommodation' %}active{% endif %}"><a href="{{ path('accommodation') }}">ACCOMMODATION</a></li> #}
+					{# <li class="{% if menu == 'partners' %}active{% endif %}"><a href="{{ path('partners') }}">PARTNERS  </a></li> #}
+					<li class="{% if menu == 'contact' %}active{% endif %}"><a href="{{ path('contact') }}">CONTACT  </a></li>
+					<li class="{% if menu == 'tos' %}active{% endif %}"><a href="{{ path('tos') }}">TOS  </a></li>
+				</ul>
+			</div>
+
+			{# responsive header #}
+			<div class="visible-xs navbar-default">
+				<div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      {# <a class="navbar-brand" href="#">Brand</a> #}
+			    </div>
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      
+			      <ul class="nav navbar-nav navbar-right">
+			        <li class="{% if menu == 'homepage' %}active{% endif %}"><a href="{{ path('homepage') }}">HOME</a></li>
+					<li class="{% if menu == 'about' %}active{% endif %}"><a href="{{ path('about') }}">ABOUT</a></li>
+					{# <li class="{% if menu == 'roadto' %}active{% endif %}"><a href="{{ path('roadto') }}">ROAD TO DECIBELS</a></li> #}
+					{# <li class="{% if menu == 'linesup' %}active{% endif %}"><a href="{{ path('lines_up') }}">LINEUPS</a></li> #}
+					<li class="{% if menu == 'tickets' %}active{% endif %}"><a href="{{ path('tickets') }}">TICKETS</a></li>
+					<li class="{% if menu == 'ticket' %}active{% endif %}"><a href="{{ path('ticket') }}">UPCOMING EVENTS</a></li>
+					<li class="{% if menu == 'gallery' %}active{% endif %}"><a href="{{ path('gallery') }}">GALLERY</a></li>
+					{# <li class="{% if menu == 'accommodation' %}active{% endif %}"><a href="{{ path('accommodation') }}">ACCOMMODATION</a></li> #}
+					{# <li class="{% if menu == 'partners' %}active{% endif %}"><a href="{{ path('partners') }}">PARTNERS  </a></li> #}
+					<li class="{% if menu == 'contact' %}active{% endif %}"><a href="{{ path('contact') }}">CONTACT  </a></li>
+					<li class="{% if menu == 'tos' %}active{% endif %}"><a href="{{ path('tos') }}">TOS  </a></li>
+			      </ul>
+
+			    </div><!-- /.navbar-collapse -->
+		    </div>
+			{# end responsive header #}
+
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+{% if menu == 'homepage' %}
+ 
+<script type="text/javascript">
+	// $(document).ready(function(){
+	// 	$('#myModal_prom').modal();
+	// 	 $.fancybox({
+	// 		type: 'image',
+	// 		href: 'http://decibelsfestivals.com/asset/images/promo/the-date_decibels.jpg',
+	// 	});
+	// });
+</script>
+{% endif %}

@@ -1,0 +1,218 @@
+{% extends 'layouts/main.twig' %}
+{% block maincontent %}
+<body>
+		<div class="wrapper prelatif">
+
+
+			<div class="block_floats_button">
+				<div class="buttons_list buy_ticket">
+					<a href="{{ path('tickets') }}"><img src="{{ app.request.baseurl }}/asset/images/backs-floatButtons_buyTickets.png" alt="" class="img-responsive"></a>
+				</div>
+				<div class="clear height-35"></div>
+				<div class="buttons_list buy_event">
+					<a href="{{ path('ticket') }}"><img src="{{ app.request.baseurl }}/asset/images/backs-floatButtons_buyEvents.png" alt="" class="img-responsive"></a>
+				</div>
+			</div>
+			
+			<div class="outer-wrapp-contshm prelatife">
+				<div class="clear height-25"></div>
+				{% include "/layouts/header.twig" with { 'menu': block('menu') } %}
+
+				<section class="blocks-hero-slides">
+					<div id="carousel-example-generic" class="carousel fade" data-ride="carousel">
+					  <div class="carousel-inner" role="listbox">
+					    <div class="item active">
+					      <img src="{{ app.request.baseurl }}/asset/images/slides-1.jpg" class="img-responsive" alt="">
+					    </div>
+					  </div>
+					</div>
+					<div class="blocks-info-hero-caption">
+						<div class="middles-logo">
+							<img src="{{ app.request.baseurl }}/asset/images/logo-middles-homesn.png" alt="" class="img-responsive tengah">
+							<div class="inform">
+								<p>next event to be announced</p>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</section>
+
+				<div class="box-frames-feature-video">
+					<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/X0ULWIKblpc' frameborder='0' allowfullscreen></iframe></div>
+				</div>
+
+				<div class="clear height-50"></div>
+				<!-- 
+				<div class="prelatife container">
+					<div class="outer-videos-home">
+						<iframe width="570" height="330" src="https://www.youtube.com/embed/X0ULWIKblpc?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+						<div class="clear height-50"></div>
+						<div class="height-20"></div>
+						<iframe width="570" height="330" src="https://www.youtube.com/embed/r7nMmT-qyJ8?rel=0" frameborder="0" allowfullscreen></iframe>
+						<div class="clear"></div>
+					</div>
+
+					<div class="tagline-home text-center">
+						AN ANNUAL YEAR END MUSIC FESTIVAL
+					</div>
+					<div class="clear height-50"></div><div class="height-35"></div>
+					<div class="tjadwal-peluncuran text-center">
+						SURABAYA, <b>13 December 2017</b> <br>
+						CONVENTION HALL - PLAZA TUNJUNGAN
+						<div class="clear"></div>
+					</div>
+					<div class="clear height-35"></div>
+					<div class="block-buy-tickets">
+						<a href="{{ path('tickets') }}"><img src="{{ app.request.baseurl }}/asset/images/bt-ticket-button.png" alt="" class="pc-center"></a>
+						<div class="clear"></div>
+					</div>
+
+					<div class="clear"></div>
+				</div> -->
+
+
+				<div class="back-colshkd-bottomabs hide hidden">
+					<div class="backs-bottomdescl">
+						<div class="text">
+							LINE UPS WILL <br>
+							BE ANNOUNCED
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="clear height-5"></div>
+				</div>
+
+				<div class="container prelatife">
+					<div class="list-datahm-clineup data2 hidden hide">
+							{% if data %}
+								<div class="titles-tglines-title">PHASE 1</div>
+								<div class="clear height-0"></div>
+								{% for ls_data2 in data %}
+									{% if ls_data2.id < 8 %}
+									<span>
+										<div class="itemss"><a href="{{ path('lines_up') }}"><img src="{{ app.request.baseurl }}/images/linesup/{{ ls_data2.logo }}" alt=""></a></div>
+									</span>
+									{% endif  %}
+								{% endfor %}
+								<div class="clear height-35"></div>
+								<div class="clear"></div>
+								<div class="titles-tglines-title">PHASE 2</div>
+								<div class="clear height-0"></div>
+								{% for ls_data in data %}
+									{% if ls_data.id == 8 %}
+									<span>
+										<div class="itemss"><a href="{{ path('lines_up') }}"><img src="{{ app.request.baseurl }}/images/linesup/{{ ls_data.logo }}" alt=""></a></div>
+									</span>
+									{% endif  %}
+								{% endfor %}
+
+								<div class="clear height-35"></div>
+								<div class="clear"></div>
+								<div class="titles-tglines-title">PHASE 3</div>
+								<div class="clear height-0"></div>
+								{% for ls_data in data %}
+									{% if ls_data.id == 9 or ls_data.id == 10 or ls_data.id == 11 or ls_data.id == 12 %}
+									<span>
+										<div class="itemss"><a href="{{ path('lines_up') }}"><img src="{{ app.request.baseurl }}/images/linesup/{{ ls_data.logo }}" alt=""></a></div>
+									</span>
+									{% endif  %}
+								{% endfor %}
+
+								<div class="clear height-35"></div>
+								<div class="clear"></div>
+								<div class="titles-tglines-title">PHASE 4</div>
+								<div class="clear height-0"></div>
+								{% for ls_data in data %}
+									{% if ls_data.id == 12 %}
+									<span>
+										<div class="itemss"><a href="{{ path('lines_up') }}"><img src="{{ app.request.baseurl }}/images/linesup/{{ ls_data.logo }}" alt=""></a></div>
+									</span>
+									{% endif  %}
+								{% endfor %}
+
+								<div class="clear height-35"></div>
+								<div class="clear"></div>
+								<div class="titles-tglines-title">PHASE 5</div>
+								<div class="clear height-0"></div>
+								{% for ls_data in data %}
+									{% if ls_data.id == 13 %}
+									<span>
+										<div class="itemss"><a href="{{ path('lines_up') }}"><img src="{{ app.request.baseurl }}/images/linesup/{{ ls_data.logo }}" alt=""></a></div>
+									</span>
+									{% endif  %}
+								{% endfor %}
+								
+
+							{% endif %}
+
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear height-40"></div>
+
+				<div class="prelatife container">
+			    <div class="tagline-home text-center">
+			        Events We Love
+			    </div>
+			    <div class="clear height-50"></div>
+				{% if dataEvent %}
+				<div class="tjadwal-peluncuran text-center blocks_list_categoryTickets">
+					<div class="row">
+			            {% for key, value in dataEvent %}
+			            <div class="col-md-3 col-sm-6">
+			                <div class="items">
+			                    <div class="picture">
+			                        <a href="{{ path('ticketdetail', {'id': value.id}) }}"><img src="{{ app.request.baseurl }}/image.php/{{ value.image }}?width=850&amp;height=412&amp;cropratio=850:412&amp;image=/ticket/images/blog/{{ value.image }}" alt="" class="img-responsive"></a>
+			                    </div>
+			                    <div class="info">
+			                        <span class="titles"><a href="{{ path('ticketdetail', {'id': value.id}) }}">{{ value.title }}</a></span>
+
+			                        <div class="clear"></div>
+			                        <span class="dates">{{ value.event_date }}</span>
+			                        <div class="clear"></div>
+			                        <span class="location">{{ value.event_location }}</span>
+			                        <div class="clear"></div>
+			                    </div>
+			                </div>
+			            </div>
+			            {% endfor %}
+
+			        </div>
+				</div>
+				{% endif %}
+				</div>
+				<div class="clear height-40"></div>
+
+			{# {% include "/layouts/header.twig" with { 'menu': block('menu') } %} #}
+				<div class="clear"></div>
+			</div>			
+				{% block content %}{% endblock %}
+			{% include "/layouts/footer.twig" %}
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// $.fancybox.open({
+				// href : 'popup.php',
+				// type : 'iframe',
+				// padding : 10,
+				// height: 515,
+				// afterClose  : function() { 
+				//     window.location.href = "{{ path('roadto') }}";
+				// }
+				// });
+
+	            $('.go_to_roadto').live('click', function(){
+	            });
+			});
+		</script>
+		<style type="text/css">
+		.fancybox-type-iframe .fancybox-inner,
+		.fancybox-opened{
+		   height: 500px !important;
+		}
+		</style>
+</body>
+{% endblock %}

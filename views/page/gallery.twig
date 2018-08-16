@@ -1,0 +1,93 @@
+{% extends layout %}
+{% block title %}Gallery - {% endblock %}
+{% block menu %}gallery{% endblock %}
+{% block content %}
+	<script type="text/javascript" src="{{ app.request.baseurl }}/asset/js/instafeed.min.js"></script>
+	<script type="text/javascript">
+		var feed = new Instafeed({
+			        // get: 'user',
+			        // userId: 2059177965,
+			        // https://instagram.com/oauth/authorize/?client_id=3c03a0fd2a354ad59621aea34ceeb3be&redirect_uri=http://sumantour.com&response_type=token&scope=public_content+basic 
+			        get: 'user', 
+			        userId: 2059177965,
+			        clientId: '5c4b018ac9c847568178f4ba939bef61',
+			        accessToken: '2059177965.5c4b018.0fa116465e1543708580f0915a63847d',
+			        target: 'instafeed',
+			        sortBy: 'most-recent',
+			        // limit: '100',
+
+			        links : true,
+			        {#template: '<div class="item"><img class="img-responsive" src="{{image}}" /></div>', #}
+			    });
+			feed.run();
+	</script>
+
+	<div class="outers-data-inside-about mw-950 tengah text-center">
+		{% if dataVideo %}
+		<div class="tagline-home text-center">
+			After Movie	
+		</div>
+		<div class="clear height-50"></div>
+		<div class="tjadwal-peluncuran text-center blocks_list_categoryTickets">
+			<div class="row">
+	            {% for key, value in dataVideo %}
+	            <div class="col-md-3 col-sm-6">
+	                <div class="items">
+	                    <div class="picture">
+	                        <a class="fancy-youtube" href="https://www.youtube.com/embed/{{ value.url_youtube|getYoutube }}"><img class="img-responsive" src="https://img.youtube.com/vi/{{ value.url_youtube|getYoutube }}/hqdefault.jpg" /></a>
+	                    </div>
+                        <span class="titles"><a class="fancy-youtube" href="https://www.youtube.com/embed/{{ value.url_youtube|getYoutube }}">{{ value.title }}</a></span>
+	                </div>
+	            </div>
+	            {% endfor %}
+
+	        </div>
+		</div>
+
+		</div>
+		<div class="clear height-50"></div>
+		<div class="height-15"></div>
+		{% endif %}
+
+
+		<div class="tagline-home text-center">
+			GALLERY	
+		</div>
+		<div class="clear height-50"></div>
+		<div class="tjadwal-peluncuran text-center">
+			<b>Collaborate at our instagram <br> gallery by using #decibelsfestival</b>
+			<div class="clear"></div>
+		</div>
+		<div class="clear height-50"></div><div class="height-15"></div>
+
+		<div class="list-instagram-lifegroup">
+			<div class="outer-data-g text-center" id="instafeed">
+				
+				<div class="clear"></div>
+			</div>
+
+			<div class="clear height-35"></div>
+			<div class="tjadwal-peluncuran text-center">
+			<b>View more gallery at<br><a target="_blank" href="https://www.instagram.com/decibelsfestivals/"><i style="color:#000;" class="fa fa-instagram"></i></a></b>
+			<div class="clear"></div>
+		</div>
+		</div>
+
+		{# <div class="t-jadwal-peluncuran2 text-center">
+			<p>Accommodating the vibe of Surabaya party community and the massive success of similar event earlier, DECIBELS FESTIVALS 2015 will surely bring the best in Surabaya and the only big event that held in East Java this end of year!</p>
+
+			<p>This year and annually, DECIBELS FESTIVALS will come hard! Mixing rave party EDM DJs and International&nbsp;level artist / singer that will take place at&nbsp;<br />
+			<strong>CONVENTION HALL, TUNJUNGAN PLAZA</strong>.<br />
+			It will be on&nbsp;<br />
+			<strong>WEDNESDAY, DECEMBER 9TH2015&hellip;<br />
+			SO SAVE THE DATE FOLKS!<br />
+			The event will be held from 8PM until the sunshine!</strong></p>
+
+			<p>SEE YOU THERE!</p>
+			<div class="clear"></div>
+		</div> #}
+
+		<div class="clear height-20"></div>
+	</div>
+
+{% endblock %}

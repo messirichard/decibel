@@ -1,0 +1,173 @@
+{% extends layout %}
+{% block title %}Tickets - {% endblock %}
+{% block menu %}tickets{% endblock %}
+{% block content %}
+	
+	<div class="outers-data-inside-about mw-950 tengah text-center">
+		<div class="tagline-home text-center">
+			TICKETS	
+		</div>
+		<div class="clear height-50"></div>
+		<div class="height-30"></div>
+		{# <div class="height-15"></div> #}
+		<div class="tjadwal-peluncuran text-center">
+			<div class="row">
+				{% for i in 1..6 %}
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<div class="back-ticket">
+						<div class="ticket-content">
+							<h3>DAILY PASS
+							GENERAL
+							ADMISSION</h3>
+							<div class="height-10"></div>
+							<div class="ticket-line"></div>
+							<div class="height-20"></div>
+							<div class="ticket-price-title">
+								IDR
+							</div>
+							<div class="height-5"></div>
+							<div class="ticket-price">
+								2.500K
+							</div>
+							
+						</div>
+					</div>
+					<div class="height-10"></div>
+					<a href="" class="btn ticket-price-title">
+						BUY TICKET
+					</a>
+					<div class="height-40"></div>
+				</div>
+				    
+				{% endfor %}
+			</div>
+			{# <p class="text-center">Sorry, Content is empty</p> #}
+			<!-- <div id="widget"></div><script type="text/javascript" src="https://neo.loket.com/themes_1.0/js/pym.min.js"></script><script>var pymParent = new pym.Parent("widget", "https://neo.loket.com/widget/iframe/npfcsihcaupjqyb", {});</script> -->
+
+
+			{#
+			<div class="list-data-tickets-t">
+				<div class="row">
+					
+					{% if data %}
+					{% for ls_data in data %}
+					<div class="col-md-4">
+						<div class="pict">
+							{% if ls_data.id == 2 %}
+							<a href="javascript:;" onclick="javascript: alert('Ticket Sold Out');">
+							{% else %}
+							<a href="javascript:;" type="button" data-links="{{ path('show_pticket', {'id': ls_data.id }) }}" data-titles="{{ ls_data.name|upper }} TICKETS" data-toggle="modal" data-target="#myModal-1">
+							{% endif %}
+							<img src="{{ app.request.baseurl }}/images/ticket/{{ ls_data.images }}" alt="" class="pc-center img-responsive">
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				{% endif %}
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="clear height-40"></div>
+			<div class="clear height-35"></div>
+			<div class="tagline-home text-center font-s22">
+				TICKETS CAN ALSO BE PURCHASED OFFLINE VIA:
+			</div>
+			<div class="clear height-45"></div>
+			<div class="list-data-bottomfs-ticket">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="itm"><a href="javascript:;" type="button" data-toggle="modal" data-target="#myModal-ticketb" class="button_ticket">TOPTEN GROUPS</a></div>
+					</div>
+					<div class="col-md-4">
+						<div class="itm"><a href="javascript:;" type="button" data-toggle="modal" data-target="#myModal-ticketb-2" class="button_ticket">PANORAMA</a></div>
+					</div>
+					<div class="col-md-4">
+						<div class="itm"><a href="javascript:;" type="button" data-toggle="modal" data-target="#myModal-ticketb-3" class="button_ticket">DISCTARRA</a></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal-ticketb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">OFFLINE TICKETS TOPTEN GROUPS</h4>
+			      </div>
+			      <div class="modal-body padding-0-import">
+						{% include "/page/outlet_topten.twig" %}
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal-ticketb-3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel" style="text-transform:uppercase;">OFFLINE TICKETS Disctarra Outlet</h4>
+			      </div>
+			      <div class="modal-body padding-0-import">
+						{% include "/page/outlet_disctara.twig" %}
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal-ticketb-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel" style="text-transform:uppercase;">OFFLINE TICKETS Panorama Outlet</h4>
+			      </div>
+			      <div class="modal-body padding-0-import">
+						{% include "/page/outlet_panorama.twig" %}
+			      </div>
+			    </div>
+			  </div>
+			</div> <div class="clear height-30"></div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel"></h4>
+			      </div>
+			      <div class="modal-body padding-0-import">
+						
+			      </div>
+			    </div>
+			  </div>
+			</div>
+				<script type="text/javascript">
+					$(function(){
+						$('#myModal-1').on('show.bs.modal', function (event) {
+						  var button = $(event.relatedTarget) // Button that triggered the modal
+						  var recipient = button.data('titles') // Extract info from data-* attributes
+						  var links = button.data('links') // Extract info from data-* attributes
+						  
+						  var modal = $(this)
+						  modal.find('.modal-title').text(recipient);
+
+						  var modal2 = $(this)
+						  modal2.find('.modal-body').load( links );
+						})
+					});
+					
+				</script>
+			#}
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear height-40"></div>
+
+		<div class="clear"></div>
+	</div>
+
+{% endblock %}

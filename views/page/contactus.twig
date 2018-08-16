@@ -1,0 +1,146 @@
+{% extends layout %}
+{% block title %}Kontak Kami - Ecoblock bata ringan ramah lingkungan{% endblock %}
+{% block menu %}contact{% endblock %}
+{% block content %}
+
+	<div class="wfull back-breadcumbtop">
+		<div class="prelatif container">
+			<div class="left text-breadcumb">
+				<div class="left margin-right-10"><a href="{{ path('homepage') }}">Home</a></div> &nbsp;&nbsp;<div class="b-left"></div>
+				<div class="c-grn"><a href="#">Kontak</a></div>
+				<div class="b-right"></div>
+			</div>
+			{# <div class="right back-t-home"><a href="#">Back</a></div> #}
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="wfull pattern-grey-pic2 dh-home">
+		<div class="prelatif container">
+			<div class="clear height-40"></div>
+			<div class="text-content content-contact">
+				<h1>Kontak Kami</h1>
+				<!-- data aplikasi -->
+
+				<div class="row">
+					<div class="left col-xs-6 w453">
+						<div class="pic-contact"><img src="{{ app.request.baseurl }}/asset/images/sample-kontak.jpg" alt=""></div>
+						<div class="clear height-30"></div>
+						<div class="message-contact">
+							<div class="top">“Come, visit our factory”</div>
+							<div class="clear height-10"></div>
+							<div class="middle"><b>Factory & Office:</b> <br>
+							Jl. Raya Bypass Krian Mojokerto Km 30 <br>
+							<a href="#">View on Google Map</a></div>
+							<div class="clear height-10"></div>
+							<div class="bottom">Telepon: 031-897 7789  |  Fax: 031-897 7789 <br>
+							Email: <a href="mailto:info@ecoblock.info">info@ecoblock.info</a></div>
+						</div>
+					</div>
+					<div class="right col-xs-6 w632">
+						<div class="contact-form">
+							<p>Untuk segala macam pertanyaan atau kebutuhan informasi lebih lanjut mengenai produk bata ringan ECOBLOCK, jangan ragu untuk menghubungi kami. Staff customer service ECOBLOCK akan siap sedia untuk melayani Anda di hari dan jam kerja.</p>
+							<div class="clear height-5"></div>
+
+							<form class="form-horizontal" action=""  role="form" method="post">
+											{% if error|length > 0 %}
+										    <div class="alert alert-error bg-danger">
+										    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+											    <h6>Please fix the following input errors:</h6>
+											    <ul>
+											    	{% for dataError in error %}
+											    	<li>{{ dataError }}</li>
+											    	{% endfor %}
+											    </ul>
+										    </div>
+										{% endif %}
+										{% if msg == 'success' %}
+										    <div class="alert alert-success">
+										    	<button type="button" class="close" data-dismiss="alert">&times;</button>
+											    Thank you for contacting us! we will respond to you shortly.
+										    </div>
+										{% endif %}
+
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">Nama</label>
+											    <div class="col-xs-8">
+											      <input type="text" class="form-control" name="contact[name]" id="contact_name" value="{{ data.name }}">
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">Email</label>
+											    <div class="col-xs-8">
+											      <input type="text" class="form-control" name="contact[email]" id="contact_email" value="{{ data.email }}">
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">Telepon</label>
+											    <div class="col-xs-8">
+											      <input type="text" class="form-control" name="contact[telepon]" id="contact_telepon" value="{{ data.telepon }}">
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">Perusahaan</label>
+											    <div class="col-xs-8">
+											      <input type="text" class="form-control" name="contact[perusahaan]" id="contact_perusahaan" value="{{ data.perusahaan }}">
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">Message</label>
+											    <div class="col-xs-8">
+											      <textarea class="form-control" name="contact[message]" rows="3">{{ data.message }}</textarea>
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">Verification Code</label>
+											    <div class="col-xs-8">
+											      <img src="asset/captcha/captcha.php" id="captcha" style="float: left;" />
+											      <a href="javascript: ;" onclick="document.getElementById('captcha').src='asset/captcha/captcha.php?'+Math.random(); document.getElementById('captcha-form').focus();" id="change-image" style="padding:4px 0px;  color:#000000; text-decoration: none; font-size: 9px; font-family:'Roboto', sans-serif; margin-top: 40px; float: left; margin-left: 10px;">Not readable? Change text.</a>
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">&nbsp;</label>
+											    <div class="col-xs-8">
+											      <input type="text" class="form-control" name="captcha" id="contact_captcha" value="">
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+
+											  <div class="form-group">
+											    <label class="col-xs-3 control-label">&nbsp;</label>
+											    <div class="col-xs-8">
+											      <input type="submit" value="Kirim" class="btn"></input>
+											    </div>
+											    <div class="clear"></div>
+											  </div>
+
+										</form>
+
+						</div>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+
+				<div class="clear height-20"></div>
+			</div>
+
+			<div class="clear height-5"></div>
+				<div class="height-4"></div>
+				<div class="lines-green"></div>
+				<div class="clear height-15"></div>
+				<div class="height-2"></div>
+					{% include "/layouts/_bottom_corner.twig" %}
+					<div class="clear height-15"></div>
+					<div class="height-3"></div>
+			<div class="clear"></div>
+		</div>
+	</div>
+{% endblock %}
